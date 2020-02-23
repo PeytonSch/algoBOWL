@@ -24,6 +24,8 @@ def generateRandomInputFile(m_clauses, n_variables):
         while(n1 == n2):
             n1 = random.randint(1,n_variables)
             n2 = random.randint(1,n_variables)
+        n1 = sign1 * n1
+        n2 = sign2 * n2
         toWrite = str(n1) + " "  + str(n2) + "\n"
         outFile.write(toWrite)
 
