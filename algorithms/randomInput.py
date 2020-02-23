@@ -1,5 +1,11 @@
 #clauses, #variables
 #each variable is [1,n] or [-1,-n]
+#n needs to be 2<= n <= 1000
+#m needs to be 1<= m <= 50000
+#want m >> n
+#output needs to be n+1 lines
+
+
 
 import random
 
