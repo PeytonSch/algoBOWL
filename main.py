@@ -5,6 +5,7 @@ import itertools
 from util.readInput import *
 from algorithms.exhaustive import *
 from algorithms.localMax import *
+from algorithms.randomInput import *
 
 #Algorithms
 
@@ -29,6 +30,8 @@ allTfCombinations = []
 tfList = [False,True]
 allTfCombinations = list(itertools.product(tfList,repeat=int(n_variables)))
 
-runExhaustiveAlgorithm(inputLines,allTfCombinations,m_clauses,n_variables)
-bestSolution = [1] * int(n_variables)
-runLocalMax(n_variables,bestSolution,inputLines)
+#runExhaustiveAlgorithm(inputLines,allTfCombinations,m_clauses,n_variables)
+#bestSolution = [1] * int(n_variables)
+#runLocalMax(n_variables,bestSolution,inputLines)
+
+generateRandomInputFile(50,4)
