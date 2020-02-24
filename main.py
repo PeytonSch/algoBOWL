@@ -1,5 +1,7 @@
 #Libraries
 import itertools
+import time
+
 
 #Util files
 from util.readInput import *
@@ -10,13 +12,19 @@ from algorithms.randomInput import *
 #Algorithms
 
 
+
+#generate input files
+generateRandomInputFile(25000,20)
+
+
 #lines from input file
 inputLines = []
 n_variables = 0
 m_clauses = 0
 
 #read input from input file and store in input lines
-readInputFile(inputLines,'./inputs/input1.txt')
+#readInputFile(inputLines,'./inputs/input1.txt')
+readInputFile(inputLines,'./output.txt')
 
 #set m_clauses and n_variables from the first line of the input file
 m_clauses = inputLines[0][0]
@@ -30,8 +38,8 @@ allTfCombinations = []
 tfList = [False,True]
 allTfCombinations = list(itertools.product(tfList,repeat=int(n_variables)))
 
+start = time.time()
 #runExhaustiveAlgorithm(inputLines,allTfCombinations,m_clauses,n_variables)
+print(time.time()-start)
 #bestSolution = [1] * int(n_variables)
 #runLocalMax(n_variables,bestSolution,inputLines)
-
-generateRandomInputFile(1000,20)

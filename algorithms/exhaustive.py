@@ -34,7 +34,7 @@ def runExhaustiveAlgorithm(inputList,allTfCombinations,m_clauses,n_variables):
             bestOutput = combination
 
 
-
+    print(best)
     generateOutputToConsole(maxNumberOfClausesSatisfied,bestOutput)
 
     generateOutputToFile(maxNumberOfClausesSatisfied,bestOutput)
