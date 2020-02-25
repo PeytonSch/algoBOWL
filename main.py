@@ -11,6 +11,9 @@ from algorithms.randomInput import *
 
 #Algorithms
 from algorithms.alg_one import *
+from algorithms.alg3 import *
+from algorithms.alg2 import *
+from algorithms.alg4 import *
 
 
 #generate input files
@@ -24,7 +27,7 @@ m_clauses = 0
 
 #read input from input file and store in input lines
 #readInputFile(inputLines,'./inputs/input1.txt')
-readInputFile(inputLines,'./inputs/input_group136.txt')
+readInputFile(inputLines,'./inputs/input_group138.txt')
 
 #set m_clauses and n_variables from the first line of the input file
 m_clauses = inputLines[0][0]
@@ -50,3 +53,4 @@ firstSolution = [1] * int(n_variables)
 #runLocalMax(n_variables,bestSolution,inputLines)
 
 algorithm_one(inputLines,m_clauses,n_variables,firstSolution)
+#rankInputsAlg2(inputLines,m_clauses,n_variables)

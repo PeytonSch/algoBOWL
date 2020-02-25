@@ -1,6 +1,7 @@
 #
 #Take look at every single variable and see how many times they are true or false
-#whichever is greater we set that as our ans value
+#for only the top 80% set the values and then pass the rest into a local max
+# function
 #
 
 from util.clausesSatisfied import *
@@ -11,7 +12,7 @@ from collections import Counter
 import time
 
 
-def rankInputsAlg2(inputLines,m_clauses,n_variables):
+def rankInputsAlg4(inputLines,m_clauses,n_variables):
 
 
 
@@ -28,7 +29,8 @@ def rankInputsAlg2(inputLines,m_clauses,n_variables):
 
     rankDict = Counter(allVariables)
 
-    #print(rankDict.most_common(3))
+    ratio = int(m_clauses)//70
+    #print(rankDict.most_common(ratio))
     #print(rankDict[str(-310)])
 
 

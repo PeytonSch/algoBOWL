@@ -1,3 +1,8 @@
+#
+#Start with all trues, find local max
+#then take random inputs and find local maxes on them
+#
+
 from util.clausesSatisfied import *
 from util.generateOutput import *
 import random
@@ -54,8 +59,9 @@ def algorithm_one(inputLines,m_clauses,n_variables,firstSolution):
     bestSatAmount = 0
     best_solution = []
 
-    for i in range(1000):
-        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,100)
+    for i in range(10000):
+        print(i)
+        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,500)
         maxFromTrial = clausesSatisfied(trial_solution,inputLines)
         if(bestSatAmount < maxFromTrial):
             #print("Old Best was ",bestSatAmount," with: \n", trial_solution, "\n we get ", maxFromTrial, "\n")
@@ -65,12 +71,12 @@ def algorithm_one(inputLines,m_clauses,n_variables,firstSolution):
             #print("Best Solution is now \n", best_solution)
             #print("From jerry's algorithm this gives ", clausesSatisfied(best_solution,inputLines) )
             #print("\n\n********\n\n")
-            #generateOutputToFile(clausesSatisfied(best_solution,inputLines),best_solution)
+            generateOutputToFile(clausesSatisfied(best_solution,inputLines),best_solution)
 
         for i in range(len(firstSolution)):
             firstSolution[i] = random.randint(0,1)
 
-    print("Max Sat Amount: ", bestSatAmount)
+    #print("Max Sat Amount: ", bestSatAmount)
     #print(best_solution)
     #print(clausesSatisfied(best_solution,inputLines))
 

@@ -1,3 +1,7 @@
+#
+#Just randomly try combinations and save the best one
+#
+
 from util.clausesSatisfied import *
 from util.generateOutput import *
 import random
@@ -10,11 +14,11 @@ def algorithm_three(inputLines,m_clauses,n_variables,firstSolution):
     bestSatAmount = 0
     best_solution = []
 
-    for i in range(1000):
-        maxFromTrial = clausesSatisfied(trial_solution,inputLines)
+    for i in range(1000000):
+        maxFromTrial = clausesSatisfied(firstSolution,inputLines)
         if(bestSatAmount < maxFromTrial):
             bestSatAmount = maxFromTrial
-            best_solution = trial_solution
+            best_solution = firstSolution
             print(bestSatAmount)
 
         for i in range(len(firstSolution)):
