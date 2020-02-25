@@ -21,25 +21,15 @@ def getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNum
             firstSolution[i] = 1
             case_number_satisfied = clausesSatisfied(firstSolution,inputLines)
 
-            if case_number_satisfied > maxNumberOfClausesSatisfied:
-                maxNumberOfClausesSatisfied = case_number_satisfied
-                steepest_index = i
-                change_to = 1
+            if case_number_satisfied < maxNumberOfClausesSatisfied:
+                firstSolution[i] = 0
 
         elif firstSolution[i] == 1:
             firstSolution[i] = 0
             case_number_satisfied = clausesSatisfied(firstSolution,inputLines)
 
-            if case_number_satisfied > maxNumberOfClausesSatisfied:
-                maxNumberOfClausesSatisfied = case_number_satisfied
-                steepest_index = i
-                change_to = 0
-
-    if (not(change_to == -1)):
-    else:
-        #print("Change to is -1, this must mean we are at a local max? ")
-        #print("The steepest index is ",steepest_index,"with nothing changed we get ", original_sat, " with this we get ", maxNumberOfClausesSatisfied)
-        return firstSolution
+            if case_number_satisfied < maxNumberOfClausesSatisfied:
+                firstSolution[i] = 1
 
     #print("The steepest index is ",steepest_index,"with nothing changed we get ", original_sat, " with this we get ", maxNumberOfClausesSatisfied)
     runNumber = runNumber -1
@@ -59,11 +49,12 @@ def algorithm_five(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
     bestSatAmount = 0
     best_solution = []
 
-    for i in range(1000):
+    for i in range(5):
+        print(i)
         if time.time() > (startTime+timeToRun):
             #print(time.time(), " > ", startTime, " + ", timeToRun, " -ran ", i , " times")
             break
-        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,20)
+        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,15)
         maxFromTrial = clausesSatisfied(trial_solution,inputLines)
         if(bestSatAmount < maxFromTrial):
             bestSatAmount = maxFromTrial

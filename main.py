@@ -19,8 +19,8 @@ from algorithms.alg4 import *
 #generate input files
 #generateRandomInputFile(25000,20)
 
-inputFiles2 = ['./inputs/input_group160.txt']
-outputFiles2 = ['./outputs/output_group160.txt']
+inputFiles1 = ['./inputs/input_group161.txt']
+outputFiles1 = ['./outputs/output_group161.txt']
 
 
 inputFiles = ['./inputs/input_group136.txt','./inputs/input_group137.txt','./inputs/input_group138.txt','./inputs/input_group139.txt',
