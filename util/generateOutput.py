@@ -13,7 +13,7 @@ def generateOutputToFile(numClauses,values):
     outfile.write(str(numClauses))
     outfile.write("\n")
     for v in values:
-        if v is True:
+        if v is 1:
             outfile.write("1\n")
         else:
             outfile.write("0\n")
