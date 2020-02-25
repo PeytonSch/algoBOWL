@@ -24,11 +24,13 @@ m_clauses = 0
 
 #read input from input file and store in input lines
 #readInputFile(inputLines,'./inputs/input1.txt')
-readInputFile(inputLines,'./inputs/input_group138.txt')
+readInputFile(inputLines,'./inputs/input_group136.txt')
 
 #set m_clauses and n_variables from the first line of the input file
 m_clauses = inputLines[0][0]
 n_variables = inputLines[0][1]
+
+
 
 #remove first line that just contains m and n
 inputLines.pop(0)
