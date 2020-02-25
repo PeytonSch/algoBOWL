@@ -22,6 +22,8 @@ from algorithms.alg4 import *
 inputFiles2 = ['./inputs/input_group160.txt']
 outputFiles2 = ['./outputs/output_group160.txt']
 
+print("hi")
+
 inputFiles = ['./inputs/input_group136.txt','./inputs/input_group137.txt','./inputs/input_group138.txt','./inputs/input_group139.txt',
             './inputs/input_group140.txt','./inputs/input_group141.txt','./inputs/input_group142.txt','./inputs/input_group143.txt',
             './inputs/input_group144.txt','./inputs/input_group145.txt','./inputs/input_group146.txt','./inputs/input_group147.txt','./inputs/input_group148.txt',
