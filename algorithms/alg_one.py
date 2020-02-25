@@ -53,31 +53,29 @@ def getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNum
         return getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNumber)
 
 
-def algorithm_one(inputLines,m_clauses,n_variables,firstSolution):
+def algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f):
+
+    startTime = time.time()
+    timeToRun = 1120
 
     maxFromTrial = 0
     bestSatAmount = 0
     best_solution = []
 
-    for i in range(10000):
-        print(i)
-        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,500)
+    for i in range(1000):
+        if time.time() > (startTime+timeToRun):
+            #print(time.time(), " > ", startTime, " + ", timeToRun, " -ran ", i , " times")
+            break
+        trial_solution = getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,20)
         maxFromTrial = clausesSatisfied(trial_solution,inputLines)
         if(bestSatAmount < maxFromTrial):
-            #print("Old Best was ",bestSatAmount," with: \n", trial_solution, "\n we get ", maxFromTrial, "\n")
             bestSatAmount = maxFromTrial
             best_solution = trial_solution
             print(bestSatAmount)
-            #print("Best Solution is now \n", best_solution)
-            #print("From jerry's algorithm this gives ", clausesSatisfied(best_solution,inputLines) )
-            #print("\n\n********\n\n")
-            generateOutputToFile(clausesSatisfied(best_solution,inputLines),best_solution)
+
+            generateOutputToFile(clausesSatisfied(best_solution,inputLines),best_solution,outputFiles[f])
 
         for i in range(len(firstSolution)):
             firstSolution[i] = random.randint(0,1)
 
-    #print("Max Sat Amount: ", bestSatAmount)
-    #print(best_solution)
-    #print(clausesSatisfied(best_solution,inputLines))
-
-    #generateOutputToFile(clausesSatisfied(best_solution,inputLines),best_solution)
+    print("Time:  ", time.time()-startTime)

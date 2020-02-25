@@ -8,8 +8,8 @@ def generateOutputToConsole(numClauses,values):
             print(0)
 
 
-def generateOutputToFile(numClauses,values):
-    outfile = open('outputs/output.txt','w+')
+def generateOutputToFile(numClauses,values,filePath):
+    outfile = open(filePath,'w+')
     outfile.write(str(numClauses))
     outfile.write("\n")
     for v in values:
