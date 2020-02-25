@@ -25,7 +25,6 @@ def getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNum
                 maxNumberOfClausesSatisfied = case_number_satisfied
                 steepest_index = i
                 change_to = 1
-            firstSolution[i] = 0
 
         elif firstSolution[i] == 1:
             firstSolution[i] = 0
@@ -35,10 +34,8 @@ def getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNum
                 maxNumberOfClausesSatisfied = case_number_satisfied
                 steepest_index = i
                 change_to = 0
-            firstSolution[i] = 1
 
     if (not(change_to == -1)):
-        firstSolution[steepest_index] = change_to
     else:
         #print("Change to is -1, this must mean we are at a local max? ")
         #print("The steepest index is ",steepest_index,"with nothing changed we get ", original_sat, " with this we get ", maxNumberOfClausesSatisfied)
