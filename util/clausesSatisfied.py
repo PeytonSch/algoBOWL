@@ -14,8 +14,10 @@ def clausesSatisfied2(input,clauses):
 def clausesSatisfied(ans, inputLines):
     numberSatisfied = 0
 
+    #print(ans)
 
     for clause in inputLines:
+        #print(clause)
         #each clause is [#, #]
         if(int(clause[0]) > 0 and int(clause[1]) > 0):
             #both clauses are as is
@@ -30,7 +32,8 @@ def clausesSatisfied(ans, inputLines):
             #first clause is not
             result = not ans[abs(int(clause[0]))-1] or ans[abs(int(clause[1]))-1]
 
-        if result is True:
+        #print(result)
+        if result is True  or result is 1:
             numberSatisfied = numberSatisfied + 1
 
     return numberSatisfied

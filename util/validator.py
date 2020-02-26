@@ -12,6 +12,8 @@ def validate(validateFilePath,inputFilePath):
     validateFile.close()
 
 
+
+
     inputList = []
     for line in inputFile:
         line = line.strip()
@@ -19,6 +21,8 @@ def validate(validateFilePath,inputFilePath):
         currentLine = line.split()
         inputList.append(currentLine)
     inputFile.close()
+
+    
 
     inputList.pop(0)
     numSatisfied = validateList[0]

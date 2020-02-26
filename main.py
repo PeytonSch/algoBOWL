@@ -53,6 +53,7 @@ validateFiles1 = ['./validate/output_from_136_to_161.txt']
 
 teamSmoothieInput = 'teamsmoothieinput.txt'
 
+'''
 for f in range(len(inputFiles)):
     #lines from input file
     inputLines = []
@@ -71,6 +72,7 @@ for f in range(len(inputFiles)):
     #remove first line that just contains m and n
     inputLines.pop(0)
 
+    #For exhaustive search
     #contains all permutations of TF combinations to test
     #allTfCombinations = []
     #tfList = [False,True]
@@ -87,7 +89,7 @@ for f in range(len(inputFiles)):
 
     #algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
     #rankInputsAlg2(inputLines,m_clauses,n_variables)
+'''
 
 for f in range(len(validateFiles)):
     validate(validateFiles[f], teamSmoothieInput)
-
