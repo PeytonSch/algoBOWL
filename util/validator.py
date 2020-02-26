@@ -22,7 +22,7 @@ def validate(validateFilePath,inputFilePath):
         inputList.append(currentLine)
     inputFile.close()
 
-    
+
 
     inputList.pop(0)
     numSatisfied = validateList[0]
@@ -32,6 +32,10 @@ def validate(validateFilePath,inputFilePath):
         validateListBool.append(int(validateList[i][0]))
 
 
-    print(validateFilePath)
-    print(numSatisfied[0])
-    print("clauses satisfied " ,clausesSatisfied(validateListBool,inputList))
+
+    theirSat = numSatisfied[0]
+    ourSat = clausesSatisfied(validateListBool,inputList)
+    if not (int(theirSat) == int(ourSat)):
+        print(validateFilePath)
+        print(theirSat)
+        print("clauses satisfied " , ourSat)
