@@ -8,12 +8,14 @@ from util.readInput import *
 from algorithms.exhaustive import *
 from algorithms.localMax import *
 from algorithms.randomInput import *
+from util.validator import *
 
 #Algorithms
 from algorithms.alg_one import *
 from algorithms.alg3 import *
 from algorithms.alg2 import *
 from algorithms.alg4 import *
+
 
 
 #generate input files
@@ -39,8 +41,17 @@ outputFiles = ['./outputs/output_group136.txt','./outputs/output_group137.txt','
             './outputs/output_group157.txt','./outputs/output_group158.txt','./outputs/output_group159.txt','./outputs/output_group160.txt',
             './outputs/output_group161.txt','./outputs/output_group182.txt']
 
+validateFiles = ['./validate/output_from_136_to_161.txt','./validate/output_from_137_to_161.txt',
+                 './validate/output_from_140_to_161.txt','./validate/output_from_141_to_161.txt','./validate/output_from_142_to_161.txt','./validate/output_from_143_to_161.txt',
+                 './validate/output_from_144_to_161.txt','./validate/output_from_145_to_161.txt','./validate/output_from_146_to_161.txt','./validate/output_from_147_to_161.txt',
+                 './validate/output_from_148_to_161.txt','./validate/output_from_149_to_161.txt','./validate/output_from_150_to_161.txt','./validate/output_from_151_to_161.txt',
+                 './validate/output_from_152_to_161.txt','./validate/output_from_153_to_161.txt','./validate/output_from_154_to_161.txt','./validate/output_from_155_to_161.txt',
+                 './validate/output_from_156_to_161.txt','./validate/output_from_157_to_161.txt','./validate/output_from_158_to_161.txt','./validate/output_from_159_to_161.txt',
+                 './validate/output_from_160_to_161.txt','./validate/output_from_161_to_161.txt','./validate/output_from_182_to_161.txt']
 
+validateFiles1 = ['./validate/output_from_136_to_161.txt']
 
+teamSmoothieInput = 'teamsmoothieinput.txt'
 
 for f in range(len(inputFiles)):
     #lines from input file
@@ -71,8 +82,12 @@ for f in range(len(inputFiles)):
 
 
 
-    firstSolution = [1] * int(n_variables)
+    #firstSolution = [1] * int(n_variables)
     #runLocalMax(n_variables,bestSolution,inputLines)
 
-    algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
+    #algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
     #rankInputsAlg2(inputLines,m_clauses,n_variables)
+
+for f in range(len(validateFiles)):
+    validate(validateFiles[f], teamSmoothieInput)
+
