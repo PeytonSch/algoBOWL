@@ -56,7 +56,7 @@ def getLocalMaxForSolution(inputLines,m_clauses,n_variables,firstSolution,runNum
 def algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f):
 
     startTime = time.time()
-    timeToRun = 1120
+    timeToRun = 1500
 
     maxFromTrial = 0
     bestSatAmount = 0

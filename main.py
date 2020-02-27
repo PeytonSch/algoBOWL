@@ -53,7 +53,7 @@ validateFiles1 = ['./validate/output_from_136_to_161.txt']
 
 teamSmoothieInput = 'teamsmoothieinput.txt'
 
-'''
+
 for f in range(len(inputFiles)):
     #lines from input file
     inputLines = []
@@ -84,12 +84,12 @@ for f in range(len(inputFiles)):
 
 
 
-    #firstSolution = [1] * int(n_variables)
+    firstSolution = [1] * int(n_variables)
     #runLocalMax(n_variables,bestSolution,inputLines)
 
-    #algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
+    algorithm_one(inputLines,m_clauses,n_variables,firstSolution,outputFiles,f)
     #rankInputsAlg2(inputLines,m_clauses,n_variables)
-'''
+
 
 for f in range(len(validateFiles)):
     validate(validateFiles[f], teamSmoothieInput)
